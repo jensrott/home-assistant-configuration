@@ -1,0 +1,288 @@
+    title: LichtControle
+    badges:
+      - device_tracker.huawei_jens
+      - device_tracker.iphone_lien
+      - device_tracker.iphone_luc
+      - binary_sensor.aeon_labs_zw100_multisensor_6_sensor
+      - sensor.aeon_labs_zw100_multisensor_6_burglar      
+      - binary_sensor.hue_motion_sensor_1_motion      
+      - sensor.aeon_labs_zw100_multisensor_6_luminance
+      - sensor.hue_motion_sensor_1_light_level    
+    
+    
+    
+    
+    path: default_view
+    cards:
+      - type: entities
+        entities:
+          - switch.keuken
+          - switch.slaapkamer
+          - switch.eetplaats
+          - switch.inkom
+          - switch.zithoek
+          - switch.wc
+          - switch.zithoek_sfeerlicht
+          - switch.bureau
+        title: Geschakelde Lichten Niko Bord 
+
+
+      - type: picture-elements
+#        image: http://hassio.local:8123/local/Niko_Board.JPG
+        image: /local/Niko_Board.JPG
+        elements:
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.keuken
+            icon: mdi:lightbulb
+            style:
+              top: 45%
+              left: 50%
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.slaapkamer
+            icon: mdi:lightbulb
+            style:
+              top: 77%
+              left: 27%
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.eetplaats
+            icon: mdi:lightbulb
+            style:
+              top: 61%
+              left: 50%
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.inkom
+            icon: mdi:lightbulb
+            style:
+              top: 63%
+              left: 27%
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.zithoek
+            icon: mdi:lightbulb
+            style:
+              top: 75%
+              left: 50%
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.wc
+            icon: mdi:lightbulb
+            style:
+              top: 55%
+              left: 34%
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.zithoek_sfeerlicht
+            icon: mdi:lightbulb
+            style:
+              top: 80%
+              left: 55%
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.bureau
+            icon: mdi:lightbulb
+            style:
+              top: 50%
+              left: 27%              
+          - type: state-label
+            entity: sensor.hue_motion_sensor_1_temperature
+            style:
+              top: 7%
+              left: 90%
+              background-color: White
+          - type: service-button
+            title: Keuken Sfeer
+            style:
+              top: 33%
+              left: 50%
+              color: 
+              background-color: White
+            service: homeassistant.turn_on
+            service_data:
+              entity_id: group.keuken_sfeer
+#              - entity_id: light.hue_white_lamp_1
+
+          - type: service-button
+            title: Zithoek Sfeer
+            style:
+              top: 95%
+              left: 70%
+              color: 
+              background-color: White
+            service: homeassistant.turn_on
+            service_data:
+              entity_id: group.zithoek_sfeer
+#              - entity_id: light.hue_white_lamp_1
+
+          - type: service-button
+            title: Alle lichten uit
+            style:
+              top: 10%
+              left: 20%
+              color: 
+              background-color: White
+            service: homeassistant.turn_off
+            service_data:
+              entity_id: group.all_lights_switches
+#              - entity_id: light.hue_white_lamp_1
+
+              
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.led1_2
+            icon: mdi:lightbulb
+            style:
+              top: 55%
+              left: 75%
+
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.led1_2
+            icon: mdi:lightbulb
+            style:
+              top: 55%
+              left: 81%             
+              
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.led3
+            icon: mdi:lightbulb
+            style:
+              top: 55%
+              left: 87%              
+              
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.led4
+            icon: mdi:lightbulb
+            style:
+              top: 61%
+              left: 75%
+
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.led5_6
+            icon: mdi:lightbulb
+            style:
+              top: 61%
+              left: 81%             
+              
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.led5_6
+            icon: mdi:lightbulb
+            style:
+              top: 61%
+              left: 87% 
+              
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.led7
+            icon: mdi:lightbulb
+            style:
+              top: 67%
+              left: 75%
+
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.led8
+            icon: mdi:lightbulb
+            style:
+              top: 67%
+              left: 81%             
+              
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: switch.led9
+            icon: mdi:lightbulb
+            style:
+              top: 67%
+              left: 87%
+              
+          - type: service-button
+            title: LEDs Flash
+            style:
+              top: 33%
+              left: 83%
+              color: 
+              background-color: White
+            service: script.turn_on
+            service_data:
+              entity_id: script.leds_flash              
+              
+          - type: service-button
+            title: LEDs Stop Flash
+            style:
+              top: 80%
+              left: 83%
+              color: 
+              background-color: White
+            service: script.turn_off
+            service_data:
+              entity_id: script.leds_flash              
+              
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: light.hue_white_lamp_1
+            icon: mdi:lightbulb
+            style:
+              top: 40%
+              left: 77%
+          - type: state-icon
+            tap_action:
+              action: toggle
+            entity: light.hue_white_lamp_2
+            icon: mdi:lightbulb
+            style:
+              top: 40%
+              left: 84%
+
+              
+              
+      - type: picture-entity
+        entity: camera.hikvision_camera
+        camera_view: live
+        
+      - type: entities
+        entities:
+          - light.hue_white_lamp_1
+          - light.hue_white_lamp_2
+        title: Hue Lampen LED Bord
+
+      - type: entities
+        entities:
+          - switch.led1_2
+          - switch.led3
+          - switch.led4
+          - switch.led5_6
+          - switch.led7
+          - switch.led8
+          - switch.led9
+        title: Geschakelde Lichten LED Bord
+        
+        
+      - type: media-control
+        entity: media_player.eetkamer
+      - type: media-control
+        entity: media_player.soundtouch_living

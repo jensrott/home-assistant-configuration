@@ -1,0 +1,108 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+# default_config:
+sun:
+person:
+device_tracker:
+  - platform: ping
+    hosts:
+      iphone_LRO: 192.168.1.12
+      iphone_Luc: 192.168.1.12
+      iphone_Lien: 192.168.1.4
+      huawei_Jens: 192.168.1.30
+frontend:
+config:
+http:
+stream:
+discovery:
+updater:
+shopping_list:
+map:
+lovelace:
+  mode: yaml
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+# configuring Google Assistant
+cloud:
+  google_actions:
+    filter:
+      include_entities:
+       - camera_player.eetkamer
+      include_domains:
+        - switch
+        - light
+        - media_player
+        - camera
+        - sensor
+        - binary_sensor
+#      exclude_entities:
+#        - switch.outside
+    entity_config:
+      switch.keuken:
+        name: Keuken
+        aliases:
+         - Keuken licht
+         - Lichten
+
+
+
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+switch:
+  - platform: rpi_gpio
+    ports:
+      9: zithoek_sfeerlicht
+      10: keuken
+      11: slaapkamer
+      12: Inkom
+      13: WC
+      14: Bureau
+      15: Eetplaats
+      16: Zithoek
+      17: LED1-2
+      18: LED3
+      19: LED4
+      20: LED5-6
+      21: LED5
+      22: LED7
+      23: LED8
+      24: LED9
+    invert_logic: true
+
+
+
+weather:
+  - platform: buienradar
+    name: wetteren
+    forecast: true
+
+camera:
+  - platform: generic
+    still_image_url: !secret IPCAM1_still_image_url
+    stream_source: !secret IPCAM1_stream_source
+    name: Hikvision Camera
+
+zwave:
+  usb_path: /dev/ttyACM0
+  network_key: "0x02, 0x69, 0xec, 0x6f, 0xdb, 0x43, 0x77, 0x68, 0x8b, 0xd7, 0x8b, 0x6c, 0x98, 0xdf, 0xfd, 0xf2"
+
+sensor:
+  - platform: waze_travel_time
+    origin: Montréal, QC
+    destination: Québec, QC
+    region: "US"
+    name: Tijd tot school
+  - platform: nmbs
+    station_from: "Wetteren"
+    station_to: "Gent_Sint_Pieters"
+    name: "Tijd met de trein naar Gent"
+    show_on_map: true

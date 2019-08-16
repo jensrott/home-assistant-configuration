@@ -1,0 +1,46 @@
+  leds_flash:
+    alias: LED flash on
+    sequence:
+      - alias: LED Groen Flash On
+        service: homeassistant.turn_on
+        data:
+          entity_id: group.leds_groen
+      - delay:
+          # time for flash light on
+          seconds: 1
+      - service: homeassistant.turn_off
+        data:
+          entity_id: group.leds_groen
+      - alias: LED wit Flash On
+        service: homeassistant.turn_on
+        data:
+          entity_id: group.leds_wit
+      - delay:
+          # time for flash light on
+          seconds: 1
+      - service: homeassistant.turn_off
+        data:
+          entity_id: group.leds_wit          
+      - alias: LED rood Flash On
+        service: homeassistant.turn_on
+        data:
+          entity_id: group.leds_rood
+      - delay:
+          # time for flash light on
+          seconds: 1
+      - service: homeassistant.turn_off
+        data:
+          entity_id: group.leds_rood          
+      - service: script.turn_on
+        data:
+          entity_id: script.leds_loop
+          
+  leds_loop:
+    alias: led flash loop
+    sequence:
+      - delay:
+          # time for flash light off
+          seconds: 1
+      - service: script.turn_on
+        data:
+          entity_id: script.leds_flash

@@ -1,0 +1,63 @@
+    title: Monitoring
+    badges:
+      - device_tracker.huawei_jens
+      - device_tracker.iphone_lien
+      - device_tracker.iphone_luc
+      - binary_sensor.aeon_labs_zw100_multisensor_6_sensor
+      - binary_sensor.hue_motion_sensor_1_motion      
+      - sensor.aeon_labs_zw100_multisensor_6_temperature
+      - sensor.aeon_labs_zw100_multisensor_6_luminance
+      - sensor.aeon_labs_zw100_multisensor_6_relative_humidity
+      - sensor.aeon_labs_zw100_multisensor_6_ultraviolet
+      - sensor.aeon_labs_zw100_multisensor_6_burglar
+      - sensor.hue_motion_sensor_1_temperature
+      - sensor.hue_motion_sensor_1_light_level
+
+    cards:
+    
+
+      - type: vertical-stack
+        cards:            
+            
+          - type: sensor
+            entity: sensor.aeon_labs_zw100_multisensor_6_temperature        
+          - type: sensor
+            entity: sensor.aeon_labs_zw100_multisensor_6_luminance        
+          - type: sensor
+            entity: sensor.aeon_labs_zw100_multisensor_6_relative_humidity 
+          - type: sensor
+            entity: sensor.aeon_labs_zw100_multisensor_6_ultraviolet         
+          - type: sensor
+            entity: sensor.aeon_labs_zw100_multisensor_6_burglar            
+
+    
+    
+    
+    
+      - type: picture-elements
+#        image: http://hassio.local:8123/local/Niko_Board.JPG
+        image: /local/Niko_Board.JPG
+        elements:
+        
+          - type: state-icon
+            entity: zwave.aeon_labs_zw100_multisensor_6
+            style:
+              top: 64%
+              left: 25%
+            title: Zwave multiSensor Inkom
+             
+
+              
+          - type: icon
+            title: Hue MultiSensor LED bord
+            style:
+                top: 30%
+                left: 80%
+            icon: mdi:zigbee
+            
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            entity: sensor.hue_motion_sensor_1_temperature        
+          - type: sensor 
+            entity: sensor.hue_motion_sensor_1_light_level        

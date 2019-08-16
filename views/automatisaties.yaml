@@ -1,0 +1,25 @@
+    title: Automatisaties
+    badges:
+      - binary_sensor.hue_motion_sensor_1_motion
+      - binary_sensor.aeon_labs_zw100_multisensor_6_sensor
+
+      - sensor.hue_motion_sensor_1_light_level
+      - sensor.hue_motion_sensor_1_temperature
+      - sensor.aeon_labs_zw100_multisensor_6_temperature
+      - sensor.aeon_labs_zw100_multisensor_6_luminance
+      - sensor.aeon_labs_zw100_multisensor_6_relative_humidity
+      - sensor.aeon_labs_zw100_multisensor_6_ultraviolet
+      - sensor.aeon_labs_zw100_multisensor_6_alarm_type
+      - sensor.aeon_labs_zw100_multisensor_6_alarm_level
+      - sensor.aeon_labs_zw100_multisensor_6_sourcenodeid
+      - sensor.aeon_labs_zw100_multisensor_6_burglar
+      - sun.sun
+    cards:
+      - type: entities
+        entities: 
+          - automation.alle_lichten_uit_om_2_uur_s_nachts
+          - automation.licht_in_inkom_keuken_wc_na_5s_na_bewegingsdetectie
+          - automation.licht_in_inkom_uit_als_meer_dan_1_minuut_geen_beweging
+          - automation.aanwezigheidssimulatie_enkel_s_nachts
+          - automation.alarm_aangezet_luistert_naar_vibratie_inkom_detector
+        title: Automatisaties   

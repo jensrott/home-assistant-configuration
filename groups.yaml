@@ -1,0 +1,39 @@
+  all_lights_switches:
+    name: All_ligths_and_switches
+    entities:
+      - group.all_lights
+      - group.all_switches
+  keuken_sfeer:
+    name: Keuken Sfeer
+    entities:
+      - switch.keuken
+      - media_player.eetkamer
+  zithoek_sfeer:
+    name: Zithoek Sfeer
+    entities:
+      - switch.zithoek
+      - switch.zithoek_sfeerlicht
+      - media_player.soundtouch_living
+  leds_groen:
+    name: LEDs Groen
+    entities:
+      - switch.led1_2
+      - switch.led3
+  leds_wit:
+    name: LEDs Wit
+    entities:
+      - switch.led4
+      - switch.led5_6
+  leds_rood:
+    name: LEDs Rood
+    entities:
+      - switch.led7
+      - switch.led8
+      - switch.led9
+  all_leds:
+    name: All LEDs
+    entities:
+      - group.leds_groen
+      - group.leds_wit
+      - group.leds_rood
+    

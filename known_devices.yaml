@@ -1,0 +1,32 @@
+
+huawei_jens:
+  hide_if_away: false
+  icon:
+  mac:
+  name: huawei jens
+  picture:
+  track: true
+
+iphone_lien:
+  hide_if_away: false
+  icon:
+  mac:
+  name: iphone lien
+  picture:
+  track: true
+
+iphone_lro:
+  hide_if_away: false
+  icon:
+  mac:
+  name: iphone lro
+  picture:
+  track: true
+
+iphone_luc:
+  hide_if_away: false
+  icon:
+  mac:
+  name: iphone luc
+  picture:
+  track: true
