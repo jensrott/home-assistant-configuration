@@ -5,16 +5,14 @@
       - device_tracker.iphone_luc
       - binary_sensor.aeon_labs_zw100_multisensor_6_sensor
       - sensor.aeon_labs_zw100_multisensor_6_burglar      
-      - binary_sensor.hue_motion_sensor_1_motion      
+      - binary_sensor.led_board_sensor_motion      
       - sensor.aeon_labs_zw100_multisensor_6_luminance
-      - sensor.hue_motion_sensor_1_light_level    
-    
-    
-    
+      - sensor.led_board_sensor_light_level    
     
     path: default_view
     cards:
       - type: entities
+        title: Geschakelde Lichten Niko Bord 
         entities:
           - switch.keuken
           - switch.slaapkamer
@@ -24,7 +22,7 @@
           - switch.wc
           - switch.zithoek_sfeerlicht
           - switch.bureau
-        title: Geschakelde Lichten Niko Bord 
+        
 
 
       - type: picture-elements
@@ -96,7 +94,7 @@
               top: 50%
               left: 27%              
           - type: state-label
-            entity: sensor.hue_motion_sensor_1_temperature
+            entity: sensor.led_board_sensor_temperature
             style:
               top: 7%
               left: 90%
@@ -259,18 +257,21 @@
               left: 84%
 
               
-              
+        # IP-camera
       - type: picture-entity
         entity: camera.hikvision_camera
         camera_view: live
         
+        # Hue lampen
       - type: entities
+        title: Hue Lampen LED Bord
         entities:
           - light.hue_white_lamp_1
           - light.hue_white_lamp_2
-        title: Hue Lampen LED Bord
-
+        
+        # Led lichten kleiner bord
       - type: entities
+        title: Geschakelde Lichten LED Bord
         entities:
           - switch.led1_2
           - switch.led3
@@ -279,10 +280,12 @@
           - switch.led7
           - switch.led8
           - switch.led9
-        title: Geschakelde Lichten LED Bord
         
         
+        # Sonos
       - type: media-control
         entity: media_player.eetkamer
-      - type: media-control
-        entity: media_player.soundtouch_living
+        
+        
+    #  - type: media-control
+     #   entity: media_player.soundtouch_living

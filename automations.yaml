@@ -8,6 +8,9 @@
   - data:
       entity_id: group.all_lights_switches
     service: homeassistant.turn_off
+    
+    
+    
 - id: '1564519824654'
   alias: Licht in inkom, Keuken, WC (na 5s)  na bewegingsdetectie
   trigger:
@@ -23,13 +26,17 @@
   - data:
       entity_id: switch.keuken
     service: switch.turn_on
-  - delay: 
+  - delay:
       seconds: 5
   - data:
       entity_id: switch.WC
     service: switch.turn_on
+    
+    
+    
+    
 - id: '1564522772067'
-  alias: Licht in inkom uit als meer dan 1 minuut geen beweging
+  alias: Licht in inkom uit na 1 minuut geen beweging
   trigger:
   - entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar
     from: '8'
@@ -40,19 +47,34 @@
   - data:
       entity_id: switch.inkom
     service: switch.turn_off
+    
+    
+    
+    
+    
 - id: '1564952758423'
   alias: AanwezigheidsSimulatie (enkel s'nachts)
-  trigger: []
+  trigger:
+  - entity_id: automation.aanwezigheidssimulatie_enkel_s_nachts
+    from: "off"
+    platform: state
+    to: "on"
   condition: []
   action:
-  - delay: 'seconds: 0'
+  - delay: 
+      seconds: 5
   - data:
       entity_id: switch.keuken
     service: switch.turn_on
-  - delay: 'seconds: 10'
+  - delay: 
+      seconds: 10
   - data:
       entity_id: switch.slaapkamer
     service: switch.turn_on
+    
+    
+    
+    
 - id: '1564956549827'
   alias: Alarm Aangezet (luistert naar vibratie inkom detector)
   trigger:

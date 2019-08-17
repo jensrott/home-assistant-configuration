@@ -1,0 +1,10 @@
+title: test page
+badges:
+  - device_tracker.huawei_jens
+  - device_tracker.iphone_lien
+  - device_tracker.iphone_luc
+  - binary_sensor.aeon_labs_zw100_multisensor_6_sensor
+  - sensor.aeon_labs_zw100_multisensor_6_burglar
+  - binary_sensor.led_board_sensor_motion
+  - sensor.aeon_labs_zw100_multisensor_6_luminance
+  - sensor.led_board_sensor_light_level

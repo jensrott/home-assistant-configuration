@@ -5,6 +5,7 @@ views:
   - !include views/monitoring.yaml
   - !include views/systeemservices.yaml
   - !include views/automatisaties.yaml
+  - !include views/test.yaml
  
 
           
