@@ -1,5 +1,10 @@
     title: Automatisaties
     badges:
+    
+      - device_tracker.huawei_jens
+      - device_tracker.iphone_lien
+      - device_tracker.iphone_luc
+      
       - binary_sensor.led_board_sensor_motion
       - binary_sensor.aeon_labs_zw100_multisensor_6_sensor
 
@@ -19,8 +24,10 @@
       - type: entities
         entities: 
           - automation.alle_lichten_uit_om_2_uur_s_nachts
+          - automation.licht_en_radio_aan_s_morgens_als_jens_thuis_is
           - automation.licht_in_inkom_keuken_wc_na_5s_na_bewegingsdetectie
           - automation.licht_in_inkom_uit_na_1_minuut_geen_beweging
-          - automation.aanwezigheidssimulatie_enkel_s_nachts
+          - automation.hue_bewegingsdetectie_switcht_hue_lampen_en_inkom
+          - automation.aanwezigheidssimulatie
           - automation.alarm_aangezet_luistert_naar_vibratie_inkom_detector
         title: Automatisaties   

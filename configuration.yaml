@@ -2,13 +2,7 @@
 default_config:
 sun:
 person:
-device_tracker:
-  - platform: ping
-    hosts:
-      iphone_LRO: 192.168.1.12
-      iphone_Luc: 192.168.1.12
-      iphone_Lien: 192.168.1.4
-      huawei_Jens: 192.168.1.30
+
 frontend:
 config:
 http:
@@ -25,15 +19,15 @@ lovelace:
 #   base_url: example.duckdns.org:8123
 
 # Text to speech
-tts:
-  - platform: google_translate
+# tts:
+#  - platform: google_translate
 
 # configuring Google Assistant
 cloud:
   google_actions:
     filter:
       include_entities:
-       - camera_player.eetkamer
+        - camera_player.eetkamer
       include_domains:
         - switch
         - light
@@ -41,17 +35,12 @@ cloud:
         - camera
         - sensor
         - binary_sensor
-#      exclude_entities:
-#        - switch.outside
+
     entity_config:
       switch.keuken:
         name: Keuken
         aliases:
-         - Keuken licht
-         - Lichten
-
-
-
+          - Keuken licht
 
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -78,7 +67,6 @@ switch:
       24: LED9
     invert_logic: true
 
-
 # Weather services setup
 weather:
   - platform: buienradar
@@ -100,12 +88,20 @@ zwave:
 # Waze service setup
 sensor:
   - platform: waze_travel_time
-    origin: Montréal, QC
-    destination: Québec, QC
-    region: "US"
+    origin: Wetteren, Belgium
+    destination: Mariakerke, Belgium
+    region: "EU"
     name: Tijd tot school
-  - platform: nmbs
-    station_from: "Wetteren"
-    station_to: "Gent_Sint_Pieters"
-    name: "Tijd met de trein naar Gent"
-    show_on_map: true
+
+#   - platform: nmbs
+#     station_from: "Wetteren"
+#     station_to: "Gent_Sint_Pieters"
+#     name: "Tijd met de trein naar Gent"
+#     show_on_map: true
+
+device_tracker:
+  - platform: ping
+    hosts:
+      iphone_Luc: 192.168.0.146
+      iphone_Lien: 192.168.1.4
+      huawei_Jens: 192.168.0.183

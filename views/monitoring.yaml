@@ -30,7 +30,6 @@
 
         # Image
       - type: picture-elements
-#        image: http://hassio.local:8123/local/Niko_Board.JPG
         image: /local/Niko_Board.JPG
         elements:
         

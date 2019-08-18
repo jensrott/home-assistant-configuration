@@ -28,8 +28,8 @@ The system can be seen as prototype which can be later replaced/used as a real h
 - Philips Hue
 - Waze (travel time calculation)
 - Sun integration
-- Sonos
-- Bose
+- Sonos Speaker
+- Bose Speaker
 - Sagem Internet Gateway Device (UPnP)
 - RPi GPIO (Raspberry Pi GPIO integration for switches)
 
@@ -43,7 +43,7 @@ The system can be seen as prototype which can be later replaced/used as a real h
   - Badges for sensor status
   - Dedicated card for video streaming
   - Control widgets for Sonos and Base
-  - Picture-elements card for mood control (Including dedicated )
+  - Picture-elements card for mood control (Including dedicated)
 
 - Monitoring:
 
@@ -79,10 +79,10 @@ I created some example automatisations using scripts:
 
 ## The physical demonstrator board
 
-I documented all the board's components on the following [website](https://nervous-pike-dfb37b.netlify.com/).
+I documented all the board's components on the following [website](https://nervous-pike-dfb37b.netlify.com/).  
 There, you can also find videos which demonstrate the control of the board.  
 This site gives a good view (photos) in case you would like to build the demonstrator yourself.  
-It requires you to insert a number of LEDS in a wooden board and wiring them up to a relay board.
+It requires you to insert a number of LEDS in a wooden board and wire them up to a relay board.  
 The power is provided using a Niko Home Control Power supply (24V DC) and the 230V AC.  
 The relay board is wired up to the GPIO's of the Raspberry Pi.  
 A plexi board (with floorplan picture), mounted in front of the LED board completes the demonstrator board.

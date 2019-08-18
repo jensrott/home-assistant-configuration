@@ -1,40 +1,44 @@
-    title: Systeem Services
-  
-    badges:
-      - person.jensrottiers
-      - sensor.tijd_tot_school
-      - sensor.hue_motion_sensor_1_light_level
-      - sensor.hue_motion_sensor_1_temperature
-      - sensor.sagem_internet_gateway_device_packets_sec_received
-      - sensor.sagem_internet_gateway_device_packets_sec_sent
-      - sensor.sagem_internet_gateway_device_bytes_received
-      - sensor.sagem_internet_gateway_device_bytes_sent
-      - sensor.sagem_internet_gateway_device_kbyte_sec_received
-      - sensor.sagem_internet_gateway_device_packets_received
-      - sensor.sagem_internet_gateway_device_packets_sent
+title: Systeem Services
+
+badges:
+  - person.jensrottiers
+  - sensor.tijd_tot_school
+  - sensor.hue_motion_sensor_1_light_level
+  - sensor.hue_motion_sensor_1_temperature
+  - sensor.sagem_internet_gateway_device_packets_sec_received
+  - sensor.sagem_internet_gateway_device_packets_sec_sent
+  - sensor.sagem_internet_gateway_device_bytes_received
+  - sensor.sagem_internet_gateway_device_bytes_sent
+  - sensor.sagem_internet_gateway_device_kbyte_sec_received
+  - sensor.sagem_internet_gateway_device_packets_received
+  - sensor.sagem_internet_gateway_device_packets_sent
+  - sun.sun
+
+cards:
+  # Waze sensor
+  - type: sensor
+    entity: sensor.tijd_tot_school
+    title: Tijd tot School
+
+    # Waze.com
+  - type: iframe
+    url: "https://embed.waze.com/iframe?zoom=14&lat=51.016725&lon=3.867788&ct=livemap"
+    aspect_ratio: 75%
+
+    # Weather forecast buienrader.nl
+  - type: weather-forecast
+    entity: weather.wetteren
+
+    # Weather forecast Norwegian Meteorological Institute
+  - type: weather-forecast
+    entity: weather.home
+
+    # Sun Status
+  - type: entities
+    entities:
       - sun.sun
-      
-    cards:
-    
-        # Waze sensor
-      - type: sensor
-        entity: sensor.tijd_tot_school
-        title : Tijd tot School
-        
-        # Weather forecast buienrader.nl
-      - type: weather-forecast
-        entity: weather.wetteren
-        
-        # Weather forecast Norwegian Meteorological Institute
-      - type: weather-forecast
-        entity: weather.home
-        
-        # Sun Status
-      - type: entities
-        entities: 
-          - sun.sun
-        
-        # Windy.com
-      - type: iframe
-        url: "https://embed.windy.com/embed2.html?lat=50.599&lon=3.870&zoom=8&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=50.599&detailLon=3.870&metricWind=default&metricTemp=default&radarRange=-1" 
-        aspect_ratio: 75%          
+
+    # Windy.com
+  - type: iframe
+    url: "https://embed.windy.com/embed2.html?lat=50.599&lon=3.870&zoom=8&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=50.599&detailLon=3.870&metricWind=default&metricTemp=default&radarRange=-1"
+    aspect_ratio: 75%

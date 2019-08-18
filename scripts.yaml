@@ -1,3 +1,8 @@
+#
+# Two scripts which generate a loop of LEDS flashing quickly (1s interval)
+# At the end of the first script, the loop script is called which restarts the first script.
+# To stop the script, one needs to provide somewhere a script_turn_off action (eg in a button)
+#
   leds_flash:
     alias: LED flash on
     sequence:
@@ -44,3 +49,95 @@
       - service: script.turn_on
         data:
           entity_id: script.leds_flash
+          
+          
+          
+          
+  presence_simulation:
+    alias: light switch every 10 seconds
+    sequence:
+      - alias: keukenlicht aan en uit
+        service: homeassistant.turn_on
+        data:
+          entity_id: switch.keuken
+      - delay:
+          # time for  light on
+          seconds: 10
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.keuken
+      - alias: slaapkamer aan en uit
+        service: homeassistant.turn_on
+        data:
+          entity_id: switch.slaapkamer
+      - delay:
+          # time for light on
+          seconds: 10
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.slaapkamer          
+      - alias: bureau aan en uit
+        service: homeassistant.turn_on
+        data:
+          entity_id: switch.bureau
+      - delay:
+          # time for light on
+          seconds: 10
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.bureau
+      - alias: eetplaats aan en uit
+        service: homeassistant.turn_on
+        data:
+          entity_id: switch.eetplaats
+      - delay:
+          # time for  light on
+          seconds: 10
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.eetplaats          
+          
+      - alias: zithoek aan en uit
+        service: homeassistant.turn_on
+        data:
+          entity_id: switch.zithoek
+      - delay:
+          # time for  light on
+          seconds: 10
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.zithoek          
+          
+          
+      - alias: zithoek aan en uit
+        service: homeassistant.turn_on
+        data:
+          entity_id: switch.inkom
+      - delay:
+          # time for  light on
+          seconds: 10
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.inkom          
+          
+          
+      - service: script.turn_on
+        data:
+          entity_id: script.presence_simulation_loop
+          
+  presence_simulation_loop:
+    alias: presence simulation loop
+    sequence:
+      - delay:
+          # time for lichts on
+          seconds: 1
+      - service: script.turn_on
+        data:
+          entity_id: script.presence_simulation
+          
+          
+          
+          
+          
+          
+          

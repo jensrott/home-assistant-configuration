@@ -26,8 +26,10 @@
 
 
       - type: picture-elements
-#        image: http://hassio.local:8123/local/Niko_Board.JPG
         image: /local/Niko_Board.JPG
+        
+        
+        # All Niko bord switches
         elements:
           - type: state-icon
             tap_action:
@@ -92,24 +94,29 @@
             icon: mdi:lightbulb
             style:
               top: 50%
-              left: 27%              
+              left: 27%
+              
+              
+           # Philips Hue Sensor : Temperature in room   
           - type: state-label
             entity: sensor.led_board_sensor_temperature
             style:
               top: 7%
               left: 90%
-              background-color: White
+              background-color: white
+              
+            # Mood Buttons  
           - type: service-button
             title: Keuken Sfeer
             style:
               top: 33%
               left: 50%
               color: 
-              background-color: White
+              background-color: white
             service: homeassistant.turn_on
             service_data:
               entity_id: group.keuken_sfeer
-#              - entity_id: light.hue_white_lamp_1
+
 
           - type: service-button
             title: Zithoek Sfeer
@@ -117,25 +124,25 @@
               top: 95%
               left: 70%
               color: 
-              background-color: White
+              background-color: white
             service: homeassistant.turn_on
             service_data:
               entity_id: group.zithoek_sfeer
-#              - entity_id: light.hue_white_lamp_1
 
+            # All-Off Button
           - type: service-button
             title: Alle lichten uit
             style:
               top: 10%
               left: 20%
               color: 
-              background-color: White
+              background-color: white
             service: homeassistant.turn_off
             service_data:
               entity_id: group.all_lights_switches
-#              - entity_id: light.hue_white_lamp_1
 
-              
+
+          # LEDs    
           - type: state-icon
             tap_action:
               action: toggle
@@ -144,7 +151,7 @@
             style:
               top: 55%
               left: 75%
-
+          # Control two LEDs with 1 switch    
           - type: state-icon
             tap_action:
               action: toggle
@@ -180,7 +187,7 @@
             style:
               top: 61%
               left: 81%             
-              
+          # Control two LEDs with 1 switch             
           - type: state-icon
             tap_action:
               action: toggle
@@ -217,13 +224,15 @@
               top: 67%
               left: 87%
               
+              
+          # Flashing On/Off Lights (also used in alarm)              
           - type: service-button
             title: LEDs Flash
             style:
-              top: 33%
+              top: 30%
               left: 83%
               color: 
-              background-color: White
+              background-color: white
             service: script.turn_on
             service_data:
               entity_id: script.leds_flash              
@@ -234,11 +243,15 @@
               top: 80%
               left: 83%
               color: 
-              background-color: White
+              background-color: white
             service: script.turn_off
             service_data:
-              entity_id: script.leds_flash              
+              entity_id: script.leds_flash 
               
+              
+              
+              
+            # Philips Hue Lights
           - type: state-icon
             tap_action:
               action: toggle

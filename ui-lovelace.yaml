@@ -1,17 +1,7 @@
 title: De Domotica Demonstrator
-views: 
-#  - !include  views/example.yaml
+views:
+  #  - !include  views/example.yaml
   - !include views/lichtcontrole.yaml
   - !include views/monitoring.yaml
   - !include views/systeemservices.yaml
   - !include views/automatisaties.yaml
-  - !include views/test.yaml
- 
-
-          
-          
-        
-
-
-        
-        
